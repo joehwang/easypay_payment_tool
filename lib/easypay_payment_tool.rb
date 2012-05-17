@@ -39,12 +39,12 @@ require 'digest'
 	
 		s=res.body.split("&")
 		mychecksum=""
-		#®³±¼checksum
+		#æ‹¿æŽ‰checksum
 		for x in 0...s.size-1
 			mychecksum<<"#{s[x]}&"
     	end
 		mychecksum<<"code=#{@code}"
-		#§âµ²ªGÂàhash
+		#æŠŠçµæžœè½‰hash
 		res = Hash[ s.map {|d| [d.split("=")[0],d.split("=")[1]]} ]
 		if res["rc"]=="0"			
 			if res["checksum"]==Digest::MD5.hexdigest(mychecksum)
@@ -67,12 +67,12 @@ require 'digest'
 	
 		s=res.body.split("&")
 		mychecksum=""
-		#®³±¼checksum
+		#æ‹¿æŽ‰checksum
 		for x in 0...s.size-1
 			mychecksum<<"#{s[x]}&"
     	end
 		mychecksum<<"code=#{@code}"
-		#§âµ²ªGÂàhash
+		#æŠŠçµæžœè½‰hash
 		res = Hash[ s.map {|d| [d.split("=")[0],d.split("=")[1]]} ]
 		if res["rc"]=="0"			
 			if res["checksum"]==Digest::MD5.hexdigest(mychecksum)
@@ -86,7 +86,7 @@ require 'digest'
 			return false
 		end
 	end
-	#ÂÅ·s¦^¶Ç¸ê®ÆÅçÃÒ
+	
 	def self.receivedataVerification(_ordernum,_amount,_paytype,_serialnumber,_writeoffnumber,_timepaid,_tel,_hash)
 			mycheck=""
 			mycheck<<"merchantnumber=#{@mnumber}"
